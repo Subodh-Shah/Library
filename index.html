@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="media.css" />
 	</head>
 	<body>
-		<div class="book-form">
+		<div class="book-form-wrapper">
 			<div class="form-top">
 				<h1>Add a Book</h1>
 				<div id="close-button"><i class="fas fa-close"></i></div>
@@ -33,25 +33,28 @@
 					<label for="pages">Pages:</label>
 					<input name="pages" type="number" id="pages" required />
 				</div>
-				<label for="isRead">Status:</label>
-				<div class="radio-inputs">
-					<label for="completed"
-						><input
-							type="radio"
-							name="status"
-							id="completed"
-							value="Completed" />
-						Completed</label
-					>
-					<label for="notCompleted"
-						><input
-							type="radio"
-							name="status"
-							id="notCompleted"
-							required
-							value="Not completed" />Not completed</label
-					>
+				<div>
+					<label for="isRead">Status:</label>
+					<div class="radio-inputs">
+						<label for="completed"
+							><input
+								type="radio"
+								name="status"
+								id="completed"
+								required
+								value="Completed" />Completed
+						</label>
+						<label for="notCompleted"
+							><input
+								type="radio"
+								name="status"
+								id="notCompleted"
+								required
+								value="Not completed" />Not completed
+						</label>
+					</div>
 				</div>
+
 				<div id="add-button">
 					<input type="submit" id="bookForm" value="ADD" required />
 				</div>
@@ -63,7 +66,7 @@
 		</button>
 
 		<div id="book-display">
-			<div class="book--wrapper"></div>
+			<div class="book-wrapper"></div>
 		</div>
 
 		<script type="module" src="main.js"></script>
