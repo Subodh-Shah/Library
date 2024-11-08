@@ -11,40 +11,76 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="media.css" />
 	</head>
 	<body>
-		<div class="add-book">
-			<h1>Add a Book</h1>
+		<div class="book-form">
+			<div class="form-top">
+				<h1>Add a Book</h1>
+				<div id="close-button"><i class="fas fa-close"></i></div>
+			</div>
+
 			<form action="#" id="bookForm">
-				<div>
-					<label for="bookName">Name:</label>
+				<div class="input-field">
+					<label for="title">Title:</label>
 					<input
-						name="bookName"
+						name="title"
 						type="text"
+						id="title"
 						autocomplete="off"
+						required
 						autofocus />
 				</div>
-				<div>
-					<label for="bookAuthor">Author:</label>
-					<input name="bookAuthor" type="text" autocomplete="off" />
+				<div class="input-field">
+					<label for="author">Author:</label>
+					<input
+						name="author"
+						type="text"
+						id="author"
+						autocomplete="off"
+						required />
 				</div>
-				<div>
-					<label for="bookPages">Pages:</label>
-					<input name="bookPages" type="number" autocomplete="off" />
+				<div class="input-field">
+					<label for="pages">Pages:</label>
+					<input
+						name="pages"
+						type="number"
+						id="pages"
+						autocomplete="off"
+						required />
 				</div>
 				<label for="isRead">Status:</label>
-				<label for="read"
-					><input type="radio" name="isRead" id="read" />Read</label
-				>
-				<label for="notRead"
-					><input type="radio" name="isRead" id="notRead" />Not
-					Read</label
-				>
+				<div class="radio-inputs">
+					<label for="completed"
+						><input
+							type="radio"
+							name="status"
+							id="completed"
+							value="Completed" />
+						Completed</label
+					>
+					<label for="notCompleted"
+						><input
+							type="radio"
+							name="status"
+							id="notCompleted"
+							required
+							value="Not completed" />Not completed</label
+					>
+				</div>
+				<div id="add-button">
+					<input type="submit" id="bookForm" value="ADD" required />
+				</div>
 			</form>
 		</div>
-		<button title="Add new book" id="add-button">
+
+		<button type="button" title="Add new book" id="toggle-form">
 			<i class="fab fa-plus fa-xl"></i>
 		</button>
+
+		<div id="book-display">
+			<div class="book--wrapper"></div>
+		</div>
 
 		<script type="module" src="main.js"></script>
 	</body>
