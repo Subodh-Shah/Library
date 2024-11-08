@@ -1,1 +1,13 @@
-.vscode
+# Cache directories
+.cache/
+
+# Visual Studio Code settings
+.vscode/
+
+# Logs
+*.log
+
+# Optional: Environment files (ignore if you start using them)
+.env
+.env.local
+.env.*.local
