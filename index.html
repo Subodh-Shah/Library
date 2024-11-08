@@ -7,45 +7,34 @@
 		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body>
-		<div id="container">
-			<div class="add-book">
-				<h1>Add a Book</h1>
-				<form action="#">
-					<div>
-						<label for="bookName">Name:</label>
-						<input
-							name="bookName"
-							type="text"
-							autocomplete="off"
-							autofocus />
-					</div>
-					<div>
-						<label for="bookAuthor">Author:</label>
-						<input
-							name="bookAuthor"
-							type="text"
-							autocomplete="off" />
-					</div>
-					<div>
-						<label for="bookPages">Pages:</label>
-						<input
-							name="bookPages"
-							type="number"
-							autocomplete="off" />
-					</div>
-					<label for="isRead">Status:</label>
-					<label for="read"
-						><input
-							type="radio"
-							name="isRead"
-							id="read" />Read</label
-					>
-					<label for="notRead"
-						><input type="radio" name="isRead" id="notRead" />Not
-						Read</label
-					>
-				</form>
-			</div>
+		<div class="add-book">
+			<h1>Add a Book</h1>
+			<form action="#">
+				<div>
+					<label for="bookName">Name:</label>
+					<input
+						name="bookName"
+						type="text"
+						autocomplete="off"
+						autofocus />
+				</div>
+				<div>
+					<label for="bookAuthor">Author:</label>
+					<input name="bookAuthor" type="text" autocomplete="off" />
+				</div>
+				<div>
+					<label for="bookPages">Pages:</label>
+					<input name="bookPages" type="number" autocomplete="off" />
+				</div>
+				<label for="isRead">Status:</label>
+				<label for="read"
+					><input type="radio" name="isRead" id="read" />Read</label
+				>
+				<label for="notRead"
+					><input type="radio" name="isRead" id="notRead" />Not
+					Read</label
+				>
+			</form>
 		</div>
 
 		<script type="module" src="main.js"></script>
