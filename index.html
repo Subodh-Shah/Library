@@ -4,12 +4,18 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Library</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body>
 		<div class="add-book">
 			<h1>Add a Book</h1>
-			<form action="#">
+			<form action="#" id="bookForm">
 				<div>
 					<label for="bookName">Name:</label>
 					<input
@@ -36,6 +42,9 @@
 				>
 			</form>
 		</div>
+		<button title="Add new book" id="add-button">
+			<i class="fab fa-plus fa-xl"></i>
+		</button>
 
 		<script type="module" src="main.js"></script>
 	</body>
