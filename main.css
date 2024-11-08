@@ -26,7 +26,8 @@ a {
 
 .book-form {
 	position: absolute;
-	opacity: 0;
+
+	display: none;
 	border: 1px solid black;
 	min-width: 80vw;
 	margin: auto;
@@ -37,9 +38,6 @@ a {
 	translate: -50% -50%;
 	color: white;
 	background-color: rgba(15, 15, 15, 0.806);
-	transition: all;
-	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-	transition-duration: 1s;
 	font-size: 16px;
 }
 
@@ -48,6 +46,7 @@ a {
 	align-items: start;
 	justify-content: space-between;
 	height: 100%;
+	margin-bottom: 16px;
 }
 
 .book-form h1 {
@@ -66,7 +65,13 @@ a {
 	gap: 12px;
 }
 
-.book-form input {
+.book-form input[type='text'] {
+	padding: 4px;
+	border-radius: 8px;
+	width: 100%;
+}
+
+.book-form input[type='number'] {
 	padding: 4px;
 	border-radius: 8px;
 	width: 100%;
@@ -80,7 +85,9 @@ a {
 
 .radio-inputs {
 	display: flex;
-	gap: 16px;
+	justify-content: start;
+	gap: 20px;
+	margin-bottom: 16px;
 }
 
 .radio-inputs > * {

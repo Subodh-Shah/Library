@@ -7,11 +7,11 @@ export default function bookComponent() {
 	const addBook = document.querySelector('.book-form');
 
 	addButton.addEventListener('click', () => {
-		addBook.style.opacity = 1;
+		addBook.style.display = 'block';
 	});
 
 	closeButton.addEventListener('click', () => {
-		addBook.style.opacity = 0;
+		addBook.style.display = 'none';
 	});
 
 	form.addEventListener('submit', (event) => {
