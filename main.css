@@ -128,4 +128,21 @@ a {
 	height: 300vh;
 	background: rgb(130, 220, 255);
 	font-family: sans-serif;
+	padding: 22px 0;
+}
+
+.book-card-wrapper {
+	display: grid;
+	grid-template-columns: repeat(1, minmax(100vw, 1fr));
+	row-gap: 5vw;
+	justify-self: center;
+}
+
+.book-card-wrapper > * {
+	border: #111 solid;
+	width: 75vw;
+	aspect-ratio: 1 / 0.65;
+	align-self: center;
+	justify-self: center;
+	border-radius: 16px;
 }

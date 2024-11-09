@@ -3,11 +3,27 @@
 		min-width: 60vw;
 		font-size: 18px;
 	}
+
+	.book-card-wrapper {
+		grid-template-columns: repeat(2, minmax(50vw, 1fr));
+	}
+
+	.book-card-wrapper > * {
+		width: 44vw;
+	}
 }
 
 @media screen and (min-width: 1024px) {
 	.book-form-wrapper {
 		min-width: 40vw;
 		font-size: 20px;
+	}
+
+	.book-card-wrapper {
+		grid-template-columns: repeat(3, minmax(33vw, 1fr));
+	}
+
+	.book-card-wrapper > * {
+		width: 27vw;
 	}
 }
