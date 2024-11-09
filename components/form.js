@@ -1,5 +1,5 @@
 import { addBookToLibrary } from './library.js';
-
+import renderBook from './renderBook.js';
 const toggleButton = document.querySelector('#toggle-form');
 const bookFormWrapper = document.querySelector('.book-form-wrapper');
 const form = document.querySelector('#book-form');
@@ -24,6 +24,6 @@ export default function addNewBook() {
 		event.preventDefault();
 		let library = addBookToLibrary(title, author, pages, status);
 		form.reset();
-		console.log(library);
+		renderBook(title, author, pages, status);
 	});
 }

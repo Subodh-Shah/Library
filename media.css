@@ -1,4 +1,8 @@
 @media screen and (min-width: 768px) {
+	header {
+		font-size: 3rem;
+	}
+
 	.book-form-wrapper {
 		min-width: 60vw;
 		font-size: 18px;
@@ -10,6 +14,8 @@
 
 	.book-card-wrapper > * {
 		width: 44vw;
+		font-size: 1rem;
+		gap: 1.5rem;
 	}
 }
 
@@ -24,6 +30,9 @@
 	}
 
 	.book-card-wrapper > * {
-		width: 27vw;
+		width: 30vw;
+		font-size: 1.1rem;
+		gap: 1.75rem;
+		word-spacing: normal;
 	}
 }
