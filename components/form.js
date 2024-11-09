@@ -5,7 +5,7 @@ const bookFormWrapper = document.querySelector('.book-form-wrapper');
 const form = document.querySelector('#book-form');
 const closeButton = document.querySelector('#close-button');
 
-export default function bookFormRender() {
+export default function addNewBook() {
 	toggleButton.addEventListener('click', () => {
 		bookFormWrapper.style.display = 'block';
 	});

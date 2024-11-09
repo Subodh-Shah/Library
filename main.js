@@ -1,7 +1,7 @@
-import bookFormRender from './components/form.js';
+import addNewBook from './components/form.js';
 
 function main() {
-	bookFormRender();
+	addNewBook();
 }
 
 main();
