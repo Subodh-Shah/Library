@@ -1,3 +1,7 @@
-import bookComponent from './components/form.js';
+import bookFormRender from './components/form.js';
 
-bookComponent();
+function main() {
+	bookFormRender();
+}
+
+main();
