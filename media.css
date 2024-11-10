@@ -25,14 +25,9 @@
 		font-size: 20px;
 	}
 
-	.book-card-wrapper {
-		grid-template-columns: repeat(3, minmax(33vw, 1fr));
-	}
-
 	.book-card-wrapper > * {
-		width: 30vw;
-		font-size: 1.1rem;
+		width: 44vw;
+		font-size: 1.25rem;
 		gap: 1.75rem;
-		word-spacing: normal;
 	}
 }

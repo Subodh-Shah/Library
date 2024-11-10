@@ -1,4 +1,4 @@
-import addNewBook from './components/form.js';
+import { addNewBook } from './components/form.js';
 
 function main() {
 	addNewBook();
