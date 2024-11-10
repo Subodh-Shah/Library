@@ -1,12 +1,12 @@
+import Book from './Book.js';
 import { addBookToLibrary } from './library.js';
-import { renderBook } from './renderBook.js';
 
 const toggleButton = document.querySelector('#toggle-form');
 const bookFormWrapper = document.querySelector('.book-form-wrapper');
 const form = document.querySelector('#book-form');
 const closeButton = document.querySelector('#close-button');
 
-export function addNewBook() {
+function addNewBook() {
 	toggleButton.addEventListener('click', () => {
 		bookFormWrapper.style.display = 'block';
 	});
@@ -23,8 +23,10 @@ export function addNewBook() {
 		let status = document.querySelector(
 			'input[name="status"]:checked'
 		).value;
-		addBookToLibrary(title, author, pages, status);
-		renderBook(title, author, pages, status);
+		const book = new Book(title, author, pages, status);
+		addBookToLibrary(book);
 		form.reset();
 	});
 }
+
+export { addNewBook };

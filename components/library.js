@@ -1,10 +1,15 @@
-import Book from './Book.js';
+import { renderLibrary } from './renderLibrary.js';
 
 let library = [];
-function addBookToLibrary(title, author, pages, status) {
-	const book = new Book(title, author, pages, status);
+function addBookToLibrary(book) {
 	library.push(book);
-	return library;
+	let bookId = library.indexOf(book);
+	renderLibrary(library, bookId);
 }
 
-export { addBookToLibrary };
+function deleteBookFromLibrary(bookId) {
+	library.splice(bookId, bookId);
+	renderLibrary(library, bookId);
+}
+
+export { library, addBookToLibrary, deleteBookFromLibrary };
