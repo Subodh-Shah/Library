@@ -3,13 +3,12 @@ import { renderLibrary } from './renderLibrary.js';
 let library = [];
 function addBookToLibrary(book) {
 	library.push(book);
-	let bookId = library.indexOf(book);
-	renderLibrary(library, bookId);
+	renderLibrary(library);
 }
 
 function deleteBookFromLibrary(bookId) {
-	library.splice(bookId, bookId);
-	renderLibrary(library, bookId);
+	library.splice(bookId, 1);
+	renderLibrary(library);
 }
 
 export { library, addBookToLibrary, deleteBookFromLibrary };
