@@ -86,7 +86,7 @@ function reRenderLibrary(library) {
 				button.addEventListener('change', () => {
 					library[index].status = button.checked
 						? 'Completed'
-						: 'Not Completed';
+						: 'Reading';
 
 					switchStatus.innerHTML = `Status: ${library[index].status}`;
 				});
