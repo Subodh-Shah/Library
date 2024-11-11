@@ -12,7 +12,7 @@ body {
 	height: 100%;
 	font-family: 'Montserrat', 'Merriweather';
 	overflow-x: hidden;
-	background: #d3d3d3;
+	background: #b9b9b9;
 }
 
 ul {
@@ -27,10 +27,12 @@ a {
 /* Main styles */
 
 header {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	text-align: center;
-	padding: 8px;
-	margin-bottom: 16px;
+	padding: 16px;
+	margin-bottom: 2.5rem;
+	background: #000;
+	color: white;
 }
 
 #toggle-form {
@@ -45,6 +47,7 @@ header {
 	color: white;
 	right: -1%;
 	top: 50%;
+	z-index: 5;
 }
 
 #toggle-form:hover {
@@ -61,11 +64,12 @@ header {
 	padding: 16px;
 	border-radius: 16px;
 	left: 50%;
-	top: 50%;
+	top: 57%;
 	translate: -50% -50%;
 	color: white;
-	background-color: rgba(15, 15, 15, 0.806);
+	background-color: rgba(255, 109, 41, 0.817);
 	font-size: 16px;
+	z-index: 10;
 }
 
 .book-form-wrapper .form-top {
@@ -161,6 +165,7 @@ header {
 	font-size: clamp(14px, 1.55rem, 3.3vw);
 	text-wrap: nowrap;
 	overflow: hidden;
+	position: relative;
 }
 
 .book-card-wrapper .book-card-item > h2 {
@@ -179,9 +184,71 @@ header {
 	gap: 8px;
 }
 
-.book-card-wrapper .book-card-item div {
+.book-card-wrapper .pages {
+	position: absolute;
+	left: 2%;
+	top: 25%;
+	padding: 8px;
+	font-family: 'Merriweather';
+	font-size: 1rem;
+}
+
+.book-card-wrapper .book-card-item .is-completed {
 	display: flex;
-	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+}
+
+.book-card-wrapper .switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 28px;
+}
+
+.book-card-wrapper .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.book-card-wrapper .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: 0.4s;
+}
+
+.book-card-wrapper .slider:before {
+	position: absolute;
+	content: '';
+	width: 20px;
+	aspect-ratio: 1/1;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: 0.4s;
+}
+
+.book-card-wrapper input:checked + .slider {
+	background-color: #2dff7d;
+}
+
+.book-card-wrapper input:checked + .slider:before {
+	transform: translateX(30px);
+}
+
+.book-card-wrapper .slider.round {
+	border-radius: 34px;
+}
+
+.book-card-wrapper .slider.round:before {
+	border-radius: 50%;
 }
 
 .book-card-wrapper .book-card-item button {

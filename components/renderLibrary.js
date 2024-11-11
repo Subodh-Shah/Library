@@ -17,11 +17,28 @@ function renderLibrary(library) {
 							<h3>Author</h3>
 							<h3>${book.author}</h3>
 					</div>
-					<div>
-							<span>Pages: ${book.pages}</span>
-							<span>Status: ${book.status}</span>
-					</div>
-			`;
+					<span class="pages">Pages: ${book.pages}</span>`;
+
+		const isCompleted = document.createElement('div');
+		isCompleted.className = 'is-completed';
+
+		const switchStatus = document.createElement('span');
+		switchStatus.className = `switch-status`;
+		switchStatus.innerHTML = `Status: ${book.status}`;
+
+		const switchLabel = document.createElement('label');
+		switchLabel.className = 'switch';
+
+		const switchInput = document.createElement('input');
+		switchInput.type = 'checkbox';
+		switchInput.dataset.bookId = index;
+		switchInput.className = 'switch-input';
+		library[index].status === 'Completed'
+			? (switchInput.checked = true)
+			: (switchInput.checked = false);
+
+		const switchSpan = document.createElement('span');
+		switchSpan.className = 'slider round';
 
 		const deleteButton = document.createElement('button');
 		deleteButton.type = 'button';
@@ -29,7 +46,16 @@ function renderLibrary(library) {
 		deleteButton.dataset.bookId = index;
 		deleteButton.textContent = 'Delete';
 
+		switchLabel.appendChild(switchInput);
+		switchLabel.appendChild(switchSpan);
+
+		isCompleted.appendChild(switchStatus);
+		isCompleted.appendChild(switchLabel);
+
+		bookCard.appendChild(isCompleted);
 		bookCard.appendChild(deleteButton);
+		console.log(typeof library[index].status);
+
 		fragment.appendChild(bookCard);
 	});
 
@@ -38,8 +64,12 @@ function renderLibrary(library) {
 }
 
 function reRenderLibrary(library) {
-	// When the delete button is clicked after it has been rendered...
+	// To Re-render any change made after any events in the book cards...
 	let deleteButton = Array.from(document.querySelectorAll('.delete-button'));
+	let switchStatusBtn = Array.from(
+		document.querySelectorAll('.switch-input')
+	);
+
 	library.forEach((_, index) => {
 		for (let button of deleteButton) {
 			let buttonNumber = parseInt(button.dataset['bookId']);
@@ -47,6 +77,21 @@ function reRenderLibrary(library) {
 				button.addEventListener('click', () => {
 					deleteBookFromLibrary(index);
 				});
+		}
+
+		for (let button of switchStatusBtn) {
+			let bookCard = button.parentElement.parentElement;
+			let buttonNumber = parseInt(button.dataset['bookId']);
+			let switchStatus = bookCard.querySelector('.switch-status');
+			if (index === buttonNumber) {
+				button.addEventListener('change', () => {
+					library[index].status = button.checked
+						? 'Completed'
+						: 'Not Completed';
+
+					switchStatus.innerHTML = `Status: ${library[index].status}`;
+				});
+			}
 		}
 	});
 }
