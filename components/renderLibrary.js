@@ -54,7 +54,6 @@ function renderLibrary(library) {
 
 		bookCard.appendChild(isCompleted);
 		bookCard.appendChild(deleteButton);
-		console.log(typeof library[index].status);
 
 		fragment.appendChild(bookCard);
 	});
@@ -66,7 +65,7 @@ function renderLibrary(library) {
 function reRenderLibrary(library) {
 	// To Re-render any change made after any events in the book cards...
 	let deleteButton = Array.from(document.querySelectorAll('.delete-button'));
-	let switchStatusBtn = Array.from(
+	let switchStatusButton = Array.from(
 		document.querySelectorAll('.switch-input')
 	);
 
@@ -79,7 +78,7 @@ function reRenderLibrary(library) {
 				});
 		}
 
-		for (let button of switchStatusBtn) {
+		for (let button of switchStatusButton) {
 			let bookCard = button.parentElement.parentElement;
 			let buttonNumber = parseInt(button.dataset['bookId']);
 			let switchStatus = bookCard.querySelector('.switch-status');
